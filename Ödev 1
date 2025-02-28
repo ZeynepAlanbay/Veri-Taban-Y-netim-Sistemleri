@@ -1,0 +1,10 @@
+Gelenseksel dosyalama sistemi,belgeleri belirli kategorilere göre sınıflandırarak saklayan erişim sağlayan manuel bir yöntemdir.
+Her ikiside verileri saklamak ve erişmek için kullanılır. Farkları ise geleneksel dosyalama sisteminde veriler ayrı ayrı dosyalanırken veri tabanı yönetim sistemlerinde ise ilişkisel yapı kullanılır.
+Veri tabanı yönetim sistemi geleneksel dosyalama sistemine göre verileri güvenli bir şekilde saklayarak daha hızlı bir erişim ve çoklu kullanıcı desteği sağlar.
+Veritabanının görevleri,verileri düzenli bir şekilde saklamak,yönetmek ve güvenli bir şekilde saklamaktır.Okulda,bankacılıkta ve hastanelerde kullanılır.
+Tablo,verileri taşımak için kullanılır.Sütun,tablo içerisinde tutulan her bir veri türüne verilen isimdir.Satır,tablo içerisinde sütuna ait veri grubudur.
+Birincil anahtar aynı değeri iki kez içermeyecek olan sütundur.Yabancıl anahtar ise birbiri arasında ilişki bulunan iki tablodan birisinden diğer tablodaki birincil anahtara başvuran sütuna denir.Aralarındaki fark ise birincil anahtar tabloyu benzersiz yapar,yabancı anahtar ise tablolar arası ilişki kurar.
+Veritabanı Yöneticisi,Uygulama Programcısı,Sorgu Dili Kullanıcıları,Son Kullanıcıları veritanı türleridir.
+
+Veritabanı verileri saklar,veritabanı yönetim sistemtemleri ise yönetir ve sorgular.
+İlişkisel veri modelinde veriler tablolar halinde saklanır,anahtarlar kullanılarak tablolar arası ilişki kurulur.
