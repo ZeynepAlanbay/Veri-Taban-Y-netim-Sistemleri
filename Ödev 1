@@ -39,3 +39,7 @@ Veritabanı verileri saklar,veritabanı yönetim sistemtemleri ise yönetir ve s
 İlişkisel veri modelinde veriler tablolar halinde saklanır,anahtarlar kullanılarak tablolar arası ilişki kurulur.
 
 11-Bir öğrenci bilgi sistemi için kullanılacak veritabanı,tablolar ve tablolar arasındaki ilişkileri belirleyiniz.
+Öğrenciler → Bölümler: Bir öğrenci yalnızca bir bölümde olabilir, ancak bir bölümde birden fazla öğrenci olabilir. (1-N)
+Dersler → Bölümler: Bir ders belirli bir bölüme ait olabilir, ancak bir bölümde birden fazla ders olabilir. (1-N)
+Dersler → Öğretmenler: Bir dersi bir öğretmen verebilir, ancak bir öğretmenin birden fazla dersi olabilir. (1-N)
+Ders Kayıtları → Öğrenciler & Dersler: Bir öğrenci birçok derse kayıt olabilir ve bir ders birçok öğrenci tarafından alınabilir. (N-N, bu yüzden ara tablo kullanılır.)
