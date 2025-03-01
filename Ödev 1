@@ -1,10 +1,34 @@
+1-Geleneksel dosyalama sistemlerinin çalışma şeklini açıklayarak bildiğiniz bir programlama dili yardımıyla txt dosyadan veri okumak ve veri yazmak için bir uygulama geliştiriniz. 
 Gelenseksel dosyalama sistemi,belgeleri belirli kategorilere göre sınıflandırarak saklayan erişim sağlayan manuel bir yöntemdir.
-Her ikiside verileri saklamak ve erişmek için kullanılır. Farkları ise geleneksel dosyalama sisteminde veriler ayrı ayrı dosyalanırken veri tabanı yönetim sistemlerinde ise ilişkisel yapı kullanılır.
-Veri tabanı yönetim sistemi geleneksel dosyalama sistemine göre verileri güvenli bir şekilde saklayarak daha hızlı bir erişim ve çoklu kullanıcı desteği sağlar.
-Veritabanının görevleri,verileri düzenli bir şekilde saklamak,yönetmek ve güvenli bir şekilde saklamaktır.Okulda,bankacılıkta ve hastanelerde kullanılır.
-Tablo,verileri taşımak için kullanılır.Sütun,tablo içerisinde tutulan her bir veri türüne verilen isimdir.Satır,tablo içerisinde sütuna ait veri grubudur.
-Birincil anahtar aynı değeri iki kez içermeyecek olan sütundur.Yabancıl anahtar ise birbiri arasında ilişki bulunan iki tablodan birisinden diğer tablodaki birincil anahtara başvuran sütuna denir.Aralarındaki fark ise birincil anahtar tabloyu benzersiz yapar,yabancı anahtar ise tablolar arası ilişki kurar.
+
+2-Gelenksel dosyalama sistemleriyle veritabanı yönetim sistemlerinin benzerlik ve farklılıklarını açıklayınız.
+Her ikiside verileri saklamak ve erişmek için kullanılır.
+Farkları ise geleneksel dosyalama sisteminde veriler ayrı ayrı dosyalanırken veri tabanı yönetim sistemlerinde ise ilişkisel yapı kullanılır.
+
+3-VTYS'nin geleneksel sisteme göre üstün özelliklerini açıklayınız.
+Veritabanı yönetim sistemi geleneksel dosyalama sistemine göre verileri güvenli bir şekilde saklayarak daha hızlı bir erişim ve çoklu kullanıcı desteği sağlar.
+
+4- Veritabanının görevini açıklayarak kullanıldığı alanlara örnek veriniz.
+Veritabanının görevleri,verileri düzenli bir şekilde saklamak,yönetmek ve güvenli bir şekilde saklamaktır.
+Okulda,bankacılıkta ve hastanelerde kullanılır.
+
+5-Tablo,satır ve sütun kavramlarını açıklayınız.
+Tablo,verileri taşımak için kullanılır.
+Sütun,tablo içerisinde tutulan her bir veri türüne verilen isimdir.
+Satır,tablo içerisinde sütuna ait veri grubudur.
+
+6-Birincil anahtar ve yabancıl anahtar kavramlarını ve farklarını açıklayınız.
+Birincil anahtar aynı değeri iki kez içermeyecek olan sütundur.
+Yabancıl anahtar ise birbiri arasında ilişki bulunan iki tablodan birisinden diğer tablodaki birincil anahtara başvuran sütuna denir.
+Aralarındaki fark ise birincil anahtar tabloyu benzersiz yapar,yabancı anahtar ise tablolar arası ilişki kurar.
+
+7-Veritabanı kullanıcı türleri nelerdir?
 Veritabanı Yöneticisi,Uygulama Programcısı,Sorgu Dili Kullanıcıları,Son Kullanıcıları veritanı türleridir.
 
+9-Veritabanı ile VTYS'nin farkını açıklayınız.
 Veritabanı verileri saklar,veritabanı yönetim sistemtemleri ise yönetir ve sorgular.
+
+10-İlişkisel veri modelini açıklayınız.
 İlişkisel veri modelinde veriler tablolar halinde saklanır,anahtarlar kullanılarak tablolar arası ilişki kurulur.
+
+11-Bir öğrenci bilgi sistemi için kullanılacak veritabanı,tablolar ve tablolar arasındaki ilişkileri belirleyiniz.
