@@ -1,6 +1,13 @@
 1-Geleneksel dosyalama sistemlerinin çalışma şeklini açıklayarak bildiğiniz bir programlama dili yardımıyla txt dosyadan veri okumak ve veri yazmak için bir uygulama geliştiriniz. 
 Gelenseksel dosyalama sistemi,belgeleri belirli kategorilere göre sınıflandırarak saklayan erişim sağlayan manuel bir yöntemdir.
 
+PersonelID | Ad      | Soyad   | Pozisyon        | Maaş  | İşeBaşlamaTarihi | Departman         | Telefon   
+--------------------------------------------------------------------------------------------------------
+1          | Burak   | Aslan   | Yazılım Müh.    | 27000 | 2021-05-10       | BT                | 555-1111  
+2          | Elif    | Karaca  | Muhasebeci      | 19000 | 2020-08-20       | Finans            | 555-2222  
+3          | Selim   | Yıldız  | İK Müdürü       | 23000 | 2019-11-15       | İnsan Kaynakları  | 555-3333  
+4          | Melisa  | Aydın   | Satış Temsilcisi| 17500 | 2023-02-05       | Teknik            | 555-4444
+
 2-Gelenksel dosyalama sistemleriyle veritabanı yönetim sistemlerinin benzerlik ve farklılıklarını açıklayınız.
 Her ikiside verileri saklamak ve erişmek için kullanılır.
 Farkları ise geleneksel dosyalama sisteminde veriler ayrı ayrı dosyalanırken veri tabanı yönetim sistemlerinde ise ilişkisel yapı kullanılır.
