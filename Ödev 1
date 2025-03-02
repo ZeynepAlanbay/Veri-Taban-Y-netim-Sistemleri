@@ -33,6 +33,15 @@ Aralarındaki fark ise birincil anahtar tabloyu benzersiz yapar,yabancı anahtar
 7-Veritabanı kullanıcı türleri nelerdir?
 Veritabanı Yöneticisi,Uygulama Programcısı,Sorgu Dili Kullanıcıları,Son Kullanıcıları veritanı türleridir.
 
+8-Users (Kullanıcılar)
+Kullanıcı bilgilerini içerir.
+Roles (Roller)
+Kullanıcı yetkilendirme rollerini içerir.
+Permissions (Yetkiler)
+Sistem içerisindeki erişim izinlerini tanımlar.
+UserRoles (Kullanıcı - Rol İlişkisi)
+Hangi kullanıcının hangi role sahip olduğunu belirler.
+
 9-Veritabanı ile VTYS'nin farkını açıklayınız.
 Veritabanı verileri saklar,veritabanı yönetim sistemtemleri ise yönetir ve sorgular.
 
