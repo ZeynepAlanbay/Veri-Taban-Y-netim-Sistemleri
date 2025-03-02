@@ -1,18 +1,19 @@
 1-Geleneksel dosyalama sistemlerinin çalışma şeklini açıklayarak bildiğiniz bir programlama dili yardımıyla txt dosyadan veri okumak ve veri yazmak için bir uygulama geliştiriniz. 
 Gelenseksel dosyalama sistemi,belgeleri belirli kategorilere göre sınıflandırarak saklayan erişim sağlayan manuel bir yöntemdir.
 
-PersonelID | Ad      | Soyad   | Pozisyon        | Maaş  | İşeBaşlamaTarihi | Departman         | Telefon   
---------------------------------------------------------------------------------------------------------
-1          | Burak   | Aslan   | Yazılım Müh.    | 27000 | 2021-05-10       | BT                | 555-1111  
-2          | Elif    | Karaca  | Muhasebeci      | 19000 | 2020-08-20       | Finans            | 555-2222  
-3          | Selim   | Yıldız  | İK Müdürü       | 23000 | 2019-11-15       | İnsan Kaynakları  | 555-3333  
-4          | Melisa  | Aydın   | Satış Temsilcisi| 17500 | 2023-02-05       | Teknik            | 555-4444
+Çalışan ID |İsim    |Soyisim |Pozisyon         |Maaş  |İşe Başlama Tarihi |Bölüm              |Telefon   
+____________________________________________________________________________________________________________
+|201        |Burak   |Aslan   |Yazılım Müh.    |30000 |2021-05-10       |BT                |444-1456      |
+|202        |Elif    |Karaca  |Muhasebeci      |35000 |2020-08-20       |Finans            |444-1238      |
+|203        |Selim   |Yıldız  |İK Müdürü       |32500 |2019-11-15       |İnsan Kaynakları  |444-2874      |
+|204        |Melisa  |Aydın   |Satış Temsilcisi|50000 |2023-02-05       |Teknik            |444-5479      |
+|___________|________|________|________________|______|_________________|__________________|______________|
 
 2-Gelenksel dosyalama sistemleriyle veritabanı yönetim sistemlerinin benzerlik ve farklılıklarını açıklayınız.
 Her ikiside verileri saklamak ve erişmek için kullanılır.
 Farkları ise geleneksel dosyalama sisteminde veriler ayrı ayrı dosyalanırken veri tabanı yönetim sistemlerinde ise ilişkisel yapı kullanılır.
 
-3-VTYS'nin geleneksel sisteme göre üstün özelliklerini açıklayınız.
+3-VTYS'nin geleneksel sisteme göre üstün özelliklerini açıklayınız.____
 Veritabanı yönetim sistemi geleneksel dosyalama sistemine göre verileri güvenli bir şekilde saklayarak daha hızlı bir erişim ve çoklu kullanıcı desteği sağlar.
 
 4- Veritabanının görevini açıklayarak kullanıldığı alanlara örnek veriniz.
@@ -39,7 +40,20 @@ Veritabanı verileri saklar,veritabanı yönetim sistemtemleri ise yönetir ve s
 İlişkisel veri modelinde veriler tablolar halinde saklanır,anahtarlar kullanılarak tablolar arası ilişki kurulur.
 
 11-Bir öğrenci bilgi sistemi için kullanılacak veritabanı,tablolar ve tablolar arasındaki ilişkileri belirleyiniz.
-Öğrenciler → Bölümler: Bir öğrenci yalnızca bir bölümde olabilir, ancak bir bölümde birden fazla öğrenci olabilir. (1-N)
-Dersler → Bölümler: Bir ders belirli bir bölüme ait olabilir, ancak bir bölümde birden fazla ders olabilir. (1-N)
-Dersler → Öğretmenler: Bir dersi bir öğretmen verebilir, ancak bir öğretmenin birden fazla dersi olabilir. (1-N)
-Ders Kayıtları → Öğrenciler & Dersler: Bir öğrenci birçok derse kayıt olabilir ve bir ders birçok öğrenci tarafından alınabilir. (N-N, bu yüzden ara tablo kullanılır.)
+TABLOLAR
+Öğrenciler(ÖğrenciID , isim , Soyisim , kayıt tarihi , telefon)
+Öğretmenler(ÖğretmenID , isim , soyisim , kayıt tarihi , telefon)
+Dersler(Ders adı , ders kodu , kredi)
+Kayıtlar(ÖğrenciID , kayıt tarihi , ders)
+Notlar(Not , öğrenciID , ders)
+Bölümler(Bölüm adı)
+
+TABLOLAR ARASI İLİŞKİLER
+Öğrenciler <-> Kayıtlar arası 1-N İlişkisi (Bir öğrenci birden fazla derse kayıt olabilir.)
+Dersler <-> Kayıtlar arası 1-N İlişkisi (Bir derse birden fazla öğrenci kayıt olabilir.)
+Dersler <-> Öğretmenler 1-N ilişkisi (Bir derse birden fazla öğretmen girebilir.)
+Öğrenciler <-> Notlar 1-N İlişkisi (Bir öğrencinin birden fazla notu olabilir.)
+Dersler <-> Notlar 1-N İlişkisi (Bir dersin birden fazla notu olabilir.)
+Öğretmenler <-> Bölümler N-1 İlişkisi (Bir bölümde birden fazla öğretmen olabilir.)
+
+
