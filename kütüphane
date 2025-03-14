@@ -52,8 +52,15 @@ ISBN int Foreign Key (ISBN) references kitaplar(ISBN)
 
 create table yazarlar(
 yazarNo int not null identity(1,1) primary key,
-yazarAdi nvarchar(50) not null,
-yazarSoyadi nvarchar(50) not null,
-yazarDili nvarchar(30),
+yazarAdi nvarchar(100) not null,
+yazarSoyadi nvarchar(100) not null,
 );
 
+create table kutuphane_kitaplar(
+kutuphaneNo int not null,
+ISBN nvarchar(20) not null,
+Miktar int,
+Primary Key(kutuphaneNo,ISBN),
+Foreign Key(kutuphaneNo) references kutuphane(kutuphaneNo),
+Foreign Key(ISBN) references kitaplar(ISBN)
+);
