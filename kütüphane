@@ -56,11 +56,36 @@ yazarAdi nvarchar(100) not null,
 yazarSoyadi nvarchar(100) not null,
 );
 
+
+create table kategoriler(
+kategoriNo int not null identity(1,1) Primary Key,
+kategoriAdi nvarchar(100) not null
+);
+
+
 create table kutuphane_kitaplar(
 kutuphaneNo int not null,
 ISBN nvarchar(20) not null,
 Miktar int,
 Primary Key(kutuphaneNo,ISBN),
 Foreign Key(kutuphaneNo) references kutuphane(kutuphaneNo),
+Foreign Key(ISBN) references kitaplar(ISBN)
+);
+
+
+create table kitap_kategori(
+kategoriNo int not null,
+ISBN nvarchar(20) not null,
+Primary Key(kategoriNo,ISBN),
+Foreign Key(ISBN) references kitaplar(ISBN),
+Foreign Key(kategoriNo) references kategoriler(kategoriNo)
+);
+
+
+create table kitaplar_yazarlar(
+yazarNo int not null,
+ISBN nvarchar(20) not null,
+Primary Key(yazarNo,ISBN),
+Foreign Key(yazarNo) references yazarlar(yazarNo),
 Foreign Key(ISBN) references kitaplar(ISBN)
 );
