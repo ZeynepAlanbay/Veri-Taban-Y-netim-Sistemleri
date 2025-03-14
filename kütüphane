@@ -51,8 +51,9 @@ ISBN int Foreign Key (ISBN) references kitaplar(ISBN)
 
 
 create table yazarlar(
-yazarNo int not null primary key,
+yazarNo int not null identity(1,1) primary key,
 yazarAdi nvarchar(50) not null,
 yazarSoyadi nvarchar(50) not null,
 yazarDili nvarchar(30),
 );
+
