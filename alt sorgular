@@ -76,3 +76,57 @@ from satislar M
 join musteri s on M.MNo=s.Mno
 
 !-- 2.Hangi müşteriden hangi aracın alındığını listelemek için gerekli SQL ifadesini yazınız.
+select (musteri.Madi+ ' ' + musteri.Msoyadi) as musteri, araclar.model
+from alislar
+inner join musteri on musteri.Mno = alislar.MNo
+inner join araclar on araclar.Aracno = alislar.AracNo
+
+!-- 3.	Her bir müşteriden alınan araçların sayısını listelemek için gerekli SQL ifadesini yazınız.
+select count(a.MNo) from alislar as a
+inner join musteri as m on m.Mno = a.MNo
+
+!-- 4.Satılan araçların marka ve modelini bulmak için gerekli SQL ifadesini yazınız.
+select araclar.marka, araclar.model
+from satislar
+join araclar on  araclar.Aracno=satislar.AracNo
+
+!-- 5.Toplam satış ve toplam alım tutarlarını ve bunların farkını bulmak için gerekli SQL ifadesini yazınız.
+select
+  (select sum(satislar.Fiyat) FROM satislar) as Toplam_Satis,
+  (select sum(alislar.Fiyat) FROM alislar) as Toplam_Alim,
+  (select sum(satislar.Fiyat) FROM satislar) - (select sum(alislar.Fiyat) FROM alislar) AS Fark;
+
+!-- 6.	Hiç satışı yapılmamış araçları listelemek için gerekli SQL ifadesini yazınız.
+ select araclar.marka, araclar.model
+ from araclar
+ left join satislar on araclar.AracNo = satislar.AracNo
+ where satislar.AracNo is null
+
+!-- 7.	Her aracın ortalama satış tutarını bulmak için gerekli SQL ifadesini yazınız.
+  select araclar.marka, araclar.model, avg(satislar.Fiyat) as OrtalamaFiyat
+  from araclar
+  join satislar on araclar.Aracno = satislar.Aracno
+  group by araclar.marka, araclar.model
+  order by OrtalamaFiyat desc;
+
+!-- 8. Alımı ve satışı yapılan tüm araçların marka, model ve alım-satış sayısını listelemek için gerekli SQL ifadesiniz yazınız.
+    select  araclar.marka, araclar.model,count(dıstınct alislar.alisNo) as AlimSayisi,count(dıstınct satislar.satisno) as SatisSayisi
+    from araclar
+   left join alislar on araclar.Aracno = alislar.Aracno
+   left join satislar on araclar.Aracno = satislar.Aracno
+    group byaraclar.marka, araclar.model;
+
+
+!--9. 20000’den fazla tutara satılan araçları kimlerin hangi aracı aldığını bulmak için gerekli SQL ifadesini yazınız.
+   select musteri.Madi, musteri.Msoyadi, araclar.marka, araclar.model, satislar.Fiyat
+   from satislar
+   join Musteri on satislar.Mno = musteri.Mno
+   join araclar on satislar.Aracno =araclar.Aracno
+   where satislar.Fiyat > 20000;
+
+!--10. Tokatta bulunan müşterilere satışı yapılan araçları listelemek için gerekli SQL ifadesini yazınız.
+    select musteri.Madi, musteri.Msoyadi, musteri.Madres, araclar.marka, araclar.model, satislar.Fiyat
+   from satislar
+   join Musteri on satislar.Mno = musteri.Mno
+   join araclar on satislar.Aracno = araclar.Aracno
+   where musteri.Madres = 'Tokat';
