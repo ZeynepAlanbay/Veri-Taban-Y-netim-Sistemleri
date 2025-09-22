@@ -1,0 +1,116 @@
+create database Eticaret;
+
+use Eticaret
+
+--kullanıcılar
+create table users(
+userID int identity(1,1) not null primary key,
+userName nvarchar(100) not null,
+userSurname nvarchar(100) not null,
+userPassword nvarchar(10) not null,
+Email nvarchar(100) not null,
+gender nvarchar(1) not null,
+birthdate date not null,
+createdate date not null,
+telnr1 nvarchar(10) not null,
+telnr2 nvarchar(10) not null,
+)
+
+--siparişler
+create table orders(
+ordersID int identity(1,1) not null primary key,
+usersID int foreign key(usersID) references users(userID),
+ordersDate date,
+totalPrice int,
+status_ nvarchar(100),
+adresID int foreign key(adresID) references  adres(adresID),
+
+)
+
+create table adres(
+adresID int identity(1,1) not null primary key,
+userID int foreign key (userID) references users(userID),
+countryID int foreign key (countryID) references countries(countryID),
+cityID int foreign key (cityID) references cities(cityID),
+townID int foreign key (townID) references towns(townID),
+districtID int foreign key(districtID) references districts(districtID), 
+postalCode int,
+addresstext nvarchar(100)
+
+)
+
+create table cities(
+cityID int identity(1,1) not null primary key,
+countryID int foreign key (countryID) references countries(countryID),
+city nvarchar(100) not null
+)
+
+create table countries(
+countryID int identity(1,1) not null  primary key,
+country nvarchar(100) not null,
+)
+
+--ilçe
+create table towns(
+townID int identity(1,1) not null primary key,
+cityID int foreign key(cityID) references cities(cityID),
+town nvarchar(100)  not null
+)
+
+--semt
+create table districts( 
+districtID int identity(1,1) not null primary key,
+townID int foreign key(townID) references towns(townID),
+district nvarchar(100)
+)
+
+create table orderDetails(
+orderDetailsID int identity(1,1) not null primary key,
+orderID int foreign key(orderID) references orders(ordersID),
+itemID int foreign key (itemID) references items(itemID),
+amount int not null, --miktar
+unitPrice int not null, --birim fiyat 
+lineTotal int not null --satır toplam
+)
+
+create table  items(
+itemID int identity(1,1) not null primary key,
+itemCode int not null,
+itemName nvarchar(100),
+unitPrice int not null, --birim fiyat 
+category1 nvarchar(100),
+category2 nvarchar(100),
+category3 nvarchar(100),
+category4 nvarchar(100),
+brand nvarchar(100) --marka
+)
+
+--fatura
+create table invoices(
+invoicesID int identity(1,1) not null primary key,
+orderID int foreign key(orderID) references orders(ordersID),
+date_ date,
+adresID int foreign key(adresID) references  adres(adresID),
+cargoFicheno nvarchar(100),
+totalPrice int
+)
+
+create table invoiceDetails(
+invoiceDetailsID int identity(1,1) not null primary key,
+invoiceID int foreign key(invoiceID) references invoices(invoicesID),
+orderDetailID int foreign key(orderDetailID) references orderDetails(orderDetailsID),
+itemID int foreign key (itemID) references items(itemID),
+amount int not null, --miktar
+unitPrice int not null, --birim fiyat 
+lineTotal int not null --satır toplam
+)
+
+create table payments(
+paymentsID int identity(1,1) not null primary key,
+orderID int foreign key(orderID) references orders(ordersID),
+paymentType nvarchar(50) not null,
+date_ date,
+isOK nvarchar(50) not null,
+approvecode int not null, --onay kodu
+paymentTotal int not null --toplam ödeme
+)
